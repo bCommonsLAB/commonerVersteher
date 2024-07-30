@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Suedtirol Versteher | Capitore Suedtirolesini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/loader.css">
+    <link rel="stylesheet" href="styles/dropdown.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loading-screen" style="display: none;">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+    
+<header>
+    <div class="seitentitel"><p class="titel">Suedtirol Versteher</p></div>
+    <div class="einführung">
+        <div class="einfuehrungstext" id="text1">Ich bin dein</div>
+    </div>
+</header>
+<div class="container">
+    <div class="form-container">
+        <div class="column">
+            <div class="content">
+                <div class="button-container">
+                    <input type="checkbox" id="micButton" class="mic-checkbox">
+                    <label for="micButton" class="mic-button" id="toggle-record-btn">
+                        <div class='mic'>
+                            <div class='mic-button-loader'></div>
+                            <div class="mic-base"></div>
+                        </div>
+                        <div class='mic2'>
+                            <div class="mic-base2"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div id="uploaded-audio" style="display: none; margin-top: 50px;">
+                <audio id="audio-player" controls></audio>
+            </div>
+            <div id="drop-area">
+                <p><input type="file" id="fileElem" accept="audio/wav, audio/m4a" onchange="handleFiles(this.files)"></p>
+                <div class='upload-arrow'>
+                    <div class="upload-base"></div>
+                </div>
+            </div>
+        </div>
+        <p id="status" class="status"></p>
+        <div class="result-grid">
+            <div>
+                <div class="result-top">
+                    <h2>Transkription</h2>
+                </div>
+                
+            <div class="result-bottom">
+                <p id="german-transcription" class="result"></p>
+                <div class="dropdown">
+                    <div role="button" class="button">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li><a href="#" onclick="speechText('german-summary')"><i class="fa-solid fa-volume-high"></i></a></li>
+                        <li><a href="#" onclick="copyText('german-summary')"><i class="fa-solid fa-copy"></i></a></li>
+                        <li><a href="#" onclick="shareText('german-summary')"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="result-top">
+                    <h2>Zusammenfassung</h2>  
+                </div>
+                <div class="result-bottom">
+                <p id="german-summary" class="result"></p>
+                <div class="dropdown">
+                    <div role="button" class="button">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li><a href="#" onclick="speechText('german-summary')"><i class="fa-solid fa-volume-high"></i></a></li>
+                        <li><a href="#" onclick="copyText('german-summary')"><i class="fa-solid fa-copy"></i></a></li>
+                        <li><a href="#" onclick="shareText('german-summary')"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="sprachanalyse">
+            <div>
+                <h2>Textanalyse</h2>
+            </div>
+        </div>
+        <div class="center" id="center">
+            <div class="innercenter" >
+                <div class="pie animate no-round hover-text" id="circle-höflichkeit" style="--c:rgb(60, 255, 0); --secondary-color: rgb(113, 112, 114);">
+                    <div class="prozent" id="höflichkeit-prozent"></div>
+                    <span class="tooltip-text" id="bottom">Höflichkeit/<br>Cortesia</span>
+                </div> 
+                    
+                <div class="pie animate no-round hover-text" id="circle-sympathisch" style="--c:rgb(255, 0, 0); --secondary-color: rgb(113, 112, 114);">
+                    <div class="prozent" id="sympathisch-prozent"></div>
+                    <span class="tooltip-text" id="bottom">Sympathisch/<br>Amichevole</span>
+                </div>
+            </div>  
+            <div class="innercenter">
+                <div class="pie animate no-round hover-text" id="circle-lobend" style="--c:orange; --secondary-color: rgb(113, 112, 114);">
+                    <div class="prozent" id="lobend-prozent"></div>
+                    <span class="tooltip-text" id="bottom">Lobend/<br>Lodare</span>
+                </div>
+                <div class="pie animate no-round hover-text" id="circle-wortwahl" style="--c:rgb(0, 162, 255); --secondary-color: rgb(113, 112, 114);">
+                    <div class="prozent" id="wortwahl-prozent"></div>
+                    <span class="tooltip-text" id="bottom">Wortwahl/<br>Scelta delle parole</span>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<div id="bg">
+    <canvas class="backgroundcanvas"></canvas>
+    <canvas class="backgroundcanvas"></canvas>
+    <canvas class="backgroundcanvas"></canvas>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script/background.js"></script>
+<script src="script/recorder.js"></script>
+<script src="script/sharetext.js"></script>
+<script src="script/copytext.js"></script>
+<script src="script/speechtotext.js"></script>
+<script src="script/presentation.js"></script>
+</body>
+</html>
