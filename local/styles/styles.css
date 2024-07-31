@@ -200,7 +200,9 @@ p {
   font-size: 17px;
   text-align: center;
 }
-
+.betweenresult{
+  margin-top: 30px;
+}
 
 @keyframes spinner {
   0% {
