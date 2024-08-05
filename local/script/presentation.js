@@ -1,7 +1,7 @@
 const text1 = document.getElementById('text1');
 const text2 = document.getElementById('text2');
 
-const fullText1 = "Ich bin dein Südtirol Versteher und du kannst mir etwas diktieren. Ich versuche es auf Deutsch zu transkribieren. Deine Daten werden nicht gepeichert, müssen aber an openAI zur Verarbeitung gesendet werden. Formuliere deinen Text höflich und sympathisch - ob es geklappt hat, sieht du unten in der Bewertung. Viel Spass!";
+const fullText1 = "Ich bin dein Commoning Versteher und du kannst hier deine Überlegungen zu Themen rund ums Commoning einsprechen. Ich werde diese Transkribieren eine kurze Reflexion schreiben und dann Bewerten, wie sehr der Text den Idealen des Commonings entspricht.";
 
 const initialText1 = fullText1.split(' ').slice(0, 5).join(' ') + '...';
 
