@@ -66,6 +66,11 @@ body,
   justify-content: space-evenly;
   width: 100%;
 }
+.mustersprache {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
 
 header {
   width: 100%;
@@ -390,6 +395,13 @@ h2 {
   width: 14px;
   height: 34px;
   background-color: #fff;
+}
+#mustersprachanalyse{
+  width: 100%;
+  text-align:center;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
 }
 
 #sprachanalyse{

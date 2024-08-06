@@ -38,9 +38,10 @@ def transcribe():
                 file=f,
                 language="de"
             )
-        #transcript = response['text']
+        
+        transcript = response['text']
 
-        transcript="Ich bin in der Stadt und möchte mich mit Menschen treffen um mit ihnen ein Bier zu trinken!"
+        # for develop: transcript="Ich bin in der Stadt und möchte mich mit Menschen treffen um mit ihnen ein Bier zu trinken!"
         # app.logger.debug(transcript);
 
         language = response.get('language', 'de')  # Default to 'de' if language is not provided

@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById('micButton');
     const centerSprachanalyse = document.getElementById('center');
     const sprachanalyse = document.getElementById('sprachanalyse');
+    const mustersprachanalyse = document.getElementById('mustersprachanalyse');
+    const musteranalyse = document.getElementById('mustersprache');
     const loadingScreen = document.getElementById('loading-screen');
     let mediaRecorder;
     let isRecording = false;
@@ -10,9 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     centerSprachanalyse.style.display = 'none';
     sprachanalyse.style.display = 'none';
+    musteranalyse.style.display = 'none';
+    mustersprachanalyse.style.display = 'none';
+
     function showCenter() {
         centerSprachanalyse.style.display = 'flex';
         sprachanalyse.style.display = 'flex';
+        mustersprachanalyse.style.display = 'flex';
+        musteranalyse.style.display = 'flex';
     }
 
     function showLoading() {
