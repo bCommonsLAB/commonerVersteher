@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCircle('circle-sympathisch', 'sympathisch-prozent', 0);
         updateCircle('circle-lobend', 'lobend-prozent', 0);
         updateCircle('circle-wortwahl', 'wortwahl-prozent', 0);
-        
+        updateCircle('circle-inklusion', 'inklusion-prozent', 0);
+
         const audioPlayer = document.getElementById('audio-player');
         const uploadedAudio = document.getElementById('uploaded-audio');
         audioPlayer.src = '';
@@ -113,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateCircle('circle-sympathisch', 'sympathisch-prozent', data.Sympathisch);
                 updateCircle('circle-lobend', 'lobend-prozent', data.Lobend);
                 updateCircle('circle-wortwahl', 'wortwahl-prozent', data.Wortwahl);
+                updateCircle('circle-inklusion', 'inklusion-prozent', data.Inklusion);
 
                 statusElement.innerText = 'Aufnahme beendet';
             }

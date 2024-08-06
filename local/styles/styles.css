@@ -66,11 +66,7 @@ body,
   justify-content: space-evenly;
   width: 100%;
 }
-.innercenter {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
+
 header {
   width: 100%;
   background: linear-gradient(90deg, #3d008d, #5f3a8f, #3d008d);
