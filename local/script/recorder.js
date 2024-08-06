@@ -25,15 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function resetAll() {
         statusElement.innerText = 'Bereit zur Aufnahme';
-        document.getElementById('german-transcription').innerText = '';
-        document.getElementById('german-summary').innerText = '';
-        
-        updateCircle('circle-höflichkeit', 'höflichkeit-prozent', 0);
-        updateCircle('circle-sympathisch', 'sympathisch-prozent', 0);
-        updateCircle('circle-lobend', 'lobend-prozent', 0);
-        updateCircle('circle-wortwahl', 'wortwahl-prozent', 0);
+        document.getElementById('transcription').innerText = '';
+        document.getElementById('reflection').innerText = '';
+        updateCircle('circle-gemeinschaft', 'gemeinschaft-prozent', 0);
+        updateCircle('circle-vertrauen', 'vertrauen-prozent', 0);
+        updateCircle('circle-gegenseitig', 'gegenseitig-prozent', 0);
+        updateCircle('circle-nachhaltig', 'nachhaltig-prozent', 0);
         updateCircle('circle-inklusion', 'inklusion-prozent', 0);
-
+        updateCircle('circle-sozialesmiteinander', 'sozialesmiteinander-prozent',0);
+        updateCircle('circle-gleichrangigeselbstorganisation', 'gleichrangigeselbstorganisation-prozent', 0);
+        updateCircle('circle-sorgendesselbstbestimmteswirtschaften', 'sorgendesselbstbestimmteswirtschaften-prozent', 0);
         const audioPlayer = document.getElementById('audio-player');
         const uploadedAudio = document.getElementById('uploaded-audio');
         audioPlayer.src = '';
@@ -107,14 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 statusElement.innerText = 'Fehler bei der Transkription: ' + data.error;
                 console.error('Transkription Fehler:', data.error);
             } else {
-                document.getElementById('german-transcription').innerText = data.Transcript || '';
-                document.getElementById('german-summary').innerText = data.Eindruck || '';
 
-                updateCircle('circle-höflichkeit', 'höflichkeit-prozent', data.Höflichkeit);
-                updateCircle('circle-sympathisch', 'sympathisch-prozent', data.Sympathisch);
-                updateCircle('circle-lobend', 'lobend-prozent', data.Lobend);
-                updateCircle('circle-wortwahl', 'wortwahl-prozent', data.Wortwahl);
+                document.getElementById('transcription').innerText = data.Transcript || '';
+                document.getElementById('reflection').innerText = data.Eindruck || '';
+
+                updateCircle('circle-gemeinschaft', 'gemeinschaft-prozent', data.Gemeinschaft);
+                updateCircle('circle-vertrauen', 'vertrauen-prozent', data.Vertrauen);
+                updateCircle('circle-gegenseitig', 'gegenseitig-prozent', data.Gegenseitig);
+                updateCircle('circle-nachhaltig', 'nachhaltig-prozent', data.Nachhaltig);
                 updateCircle('circle-inklusion', 'inklusion-prozent', data.Inklusion);
+                updateCircle('circle-sozialesmiteinander', 'sozialesmiteinander-prozent', data.SozialesMiteinander);
+                updateCircle('circle-gleichrangigeselbstorganisation', 'gleichrangigeselbstorganisation-prozent', data.GleichrangigeSelbstOrganisation);
+                updateCircle('circle-sorgendesselbstbestimmteswirtschaften', 'sorgendesselbstbestimmteswirtschaften-prozent', data.SorgendesSelbstbestimmtesWirtschaften);
 
                 statusElement.innerText = 'Aufnahme beendet';
             }

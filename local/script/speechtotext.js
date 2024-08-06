@@ -1,4 +1,4 @@
-function speechText(elementId, section) {
+function text2Speech(elementId, section) {
     var text = document.getElementById(elementId).innerText;
 
     fetch('http://127.0.0.1:5000/tts', {

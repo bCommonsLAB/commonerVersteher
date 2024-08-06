@@ -31,22 +31,56 @@ def transcribe():
 
     try:
         # Transcribe audio using OpenAI's Whisper API
+
         with open(audio_file_path, 'rb') as f:
             response = openai.Audio.transcribe(
                 model="whisper-1",
                 file=f
             )
         transcript = response['text']
+
+        # transcript="Ich bin in der Stadt und möchte mich mit Menschen treffen um mit ihnen ein Bier zu trinken!"
+        # app.logger.debug(transcript);
+
         language = response.get('language', 'de')  # Default to 'de' if language is not provided
 
         # Construct the prompt
-        prompt = config['jsonbuild'] + transcript
+        # prompt = config['jsonbuild'] + transcript
+
+        prompt = """
+            Analysiere folgenden Text und gib die Ergebnisse im JSON-Format zurück:
+            Ergebnisformat:
+            {
+                "Transcript": string,
+                "Eindruck": string,
+                "Gemeinschaft": integer,
+                "Vertrauen": integer,
+                "Gegenseitig": integer,
+                "Nachhaltig": integer,
+                "Inklusion": integer,
+                "SozialesMiteinander": integer,
+                "GleichrangigeSelbstOrganisation": integer,
+                "SorgendesSelbstbestimmtesWirtschaften": integer
+            }
+            Transcript sollte den Text nochmal beinhalten.
+            Reflektiere unter Eindruck den Inhalt, wie gut der Text die Werte des Commoning widerspiegelt. Welche Inhalte des Textes entsprechen besonders der Logik des Commoning, und welche widersprechen ihr besonders? 
+            Der Wert für Gemeinschaft sollte die Verbundenheit der Menschen durch eine Zahl zwischen 0 und 100 ausdrücken, wobei 0 sehr egoistisch ist und 100 sehr gemeinschaftssinnig ist.
+            Der Wert für Vertrauen sollte die Vertrauenswürdigkeit des Textes durch eine Zahl zwischen 0 und 100 ausdrücken, wobei 0 sehr mistrauisch ist und 100 sehr vertrauenswürdig ist.
+            Der Wert für Gegenseitig sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie einladend und offenherzig der Text für eine kollaboration ist, wobei 0 sehr abweisend ist und 100 sehr einladend ist.
+            Der Wert für Nachhaltig sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie bewust man mit Ressourcen umgeht, wobei 0 sehr verschwenderisch und 100 sehr bewust und sparspam ist.
+            Der Wert für Inklusion sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie Inklussiv der Text ist, wobei 0 bestimmte Menschen ausgrenzt und 100 alle einschliesst.
+            Der Wert für Kommerziell sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie sehr der Text profitorientiertes Wirtschaften ausdrückt, wobei 0 eine sehr bedürfnisorientiertes Wirtschaften und 100 sehr profitorientiertes Wirtschaften bedeutet.
+            Der Wert für SozialesMiteinander sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie sehr der Text Zusammenarbeit und Förderung von Beziehungen ausdrückt, wobei 0 asoziales Verhalten und 100 sehr soziales Verhalten ausdrückt.
+            Der Wert für GleichrangigeSelbstOrganisation sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie sehr der Text das Aushandeln auf Augenhöhe fördert, wobei 0 sehr Rangordnungsorientiert ist und 100 die Begenung auf Augenhöhe fördert.
+            Der Wert für SorgendesSelbstbestimmtesWirtschaften sollte durch eine Zahl zwischen 0 und 100 ausdrücken, wie sehr der Text sorgendes und selbstbestimmtes Wirtschaften ausdrückt, wobei 0 sehr fremdbestimmtes profititorientiertes Wirtschaften ist und 100 selbstbestimmtes und bedürfnisorientiertes Wirtschaften ausdrückt.
+            Text: """
+        prompt = prompt + transcript
 
         # Send prompt to OpenAI's GPT-3.5-turbo
         completion_response = openai.ChatCompletion.create(
             model=config['modelname'],
             messages=[
-                {"role": "system", "content": "Du bist ein hilfsbereiter Assistent und gibst nur die sachen aus die was dir befehlt werden und alles ist auf deutsch allso verwende  keine anderen sprachen!"},
+                {"role": "system", "content": "Du bist ein Wissenschaftler, der sich im Bereich Commoning sehr gut auskennt und die Lehre von Silke Helfrich verkörpert, die sie in ihren Publikationen, u.a. Frei fair & Lebendig die macht der Commos publiziert hat. Analysiere die texte in diesem Geist und gebe sie in einer verständlichen Sprache zurück!"},
                 {"role": "user", "content": prompt}
             ]
         )
@@ -54,7 +88,10 @@ def transcribe():
         try:
             result = completion_response['choices'][0]['message']['content'].strip()
             json_result = json.loads(result)
+            app.logger.error(json_result);
+
         except Exception as e:
+            app.logger.debug(completion_response);
             app.logger.error(f'Error processing OpenAI response: {e}')
             return jsonify({'error': 'Error processing OpenAI response'}), 500
 

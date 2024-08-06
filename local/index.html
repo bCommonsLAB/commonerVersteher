@@ -62,7 +62,7 @@
                     <h2>Transkription</h2>  
                 </div>            
             <div class="result-bottom">
-                <p id="german-transcription" class="result"></p>
+                <p id="transcription" class="result"></p>
                 <div class="dropdown">
                     <div role="button" class="button">
                         <div></div>
@@ -70,9 +70,9 @@
                         <div></div>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="speechText('german-summary')"><i class="fa-solid fa-volume-high"></i></a></li>
-                        <li><a href="#" onclick="copyText('german-summary')"><i class="fa-solid fa-copy"></i></a></li>
-                        <li><a href="#" onclick="shareText('german-summary')"><i class="fa-solid fa-envelope"></i></a></li>
+                        <li><a href="#" onclick="text2Speech('summary')"><i class="fa-solid fa-volume-high"></i></a></li>
+                        <li><a href="#" onclick="copyText('summary')"><i class="fa-solid fa-copy"></i></a></li>
+                        <li><a href="#" onclick="shareText('summary')"><i class="fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     <h2>Reflexion deiner Gedanken</h2>  
                 </div>
                 <div class="result-bottom">
-                <p id="german-summary" class="result"></p>
+                <p id="reflection" class="result"></p>
                 <div class="dropdown">
                     <div role="button" class="button">
                         <div></div>
@@ -90,7 +90,7 @@
                         <div></div>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="speechText('german-summary')"><i class="fa-solid fa-volume-high"></i></a></li>
+                        <li><a href="#" onclick="text2Speech('german-summary')"><i class="fa-solid fa-volume-high"></i></a></li>
                         <li><a href="#" onclick="copyText('german-summary')"><i class="fa-solid fa-copy"></i></a></li>
                         <li><a href="#" onclick="shareText('german-summary')"><i class="fa-solid fa-envelope"></i></a></li>
                     </ul>
@@ -100,36 +100,55 @@
         </div>
         <div id="sprachanalyse">
             <div>
-                <h2>Textanalyse</h2>
+                <h2>Analyse der Commoning Werte</h2>
             </div>
         </div>
         <div class="center" id="center">
-            <div class="pie animate no-round hover-text" id="circle-höflichkeit" style="--c:rgb(60, 255, 0); --secondary-color: rgb(113, 112, 114);">
-                <div class="prozent" id="höflichkeit-prozent"></div>
-                <span class="tooltip-text" id="bottom">Gemeinschaft/<br>Communità</span>
+            <div class="pie animate no-round hover-text" id="circle-gemeinschaft" style="--c:rgb(60, 255, 0); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="gemeinschaft-prozent"></div>
+                <span class="tooltip-text" id="bottom">Gemeinschaftlichkeit</span>
             </div> 
                     
-            <div class="pie animate no-round hover-text" id="circle-sympathisch" style="--c:rgb(255, 0, 0); --secondary-color: rgb(113, 112, 114);">
-                <div class="prozent" id="sympathisch-prozent"></div>
-                <span class="tooltip-text" id="bottom">Vertrauen/<br>Fiducia</span>
+            <div class="pie animate no-round hover-text" id="circle-vertrauen" style="--c:rgb(255, 0, 0); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="vertrauen-prozent"></div>
+                <span class="tooltip-text" id="bottom">Vertrauenswürdig</span>
             </div>
             
-            <div class="pie animate no-round hover-text" id="circle-lobend" style="--c:orange; --secondary-color: rgb(113, 112, 114);">
-                <div class="prozent" id="lobend-prozent"></div>
-                <span class="tooltip-text" id="bottom">Gegenseitigkeit/<br>Reciprocità</span>
+            <div class="pie animate no-round hover-text" id="circle-gegenseitig" style="--c:orange; --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="gegenseitig-prozent"></div>
+                <span class="tooltip-text" id="bottom">Gegenseitig</span>
             </div>
             
-            <div class="pie animate no-round hover-text" id="circle-wortwahl" style="--c:rgb(0, 17, 255); --secondary-color: rgb(113, 112, 114);">
-                <div class="prozent" id="wortwahl-prozent"></div>
-                <span class="tooltip-text" id="bottom">Vielfältigkeit/<br>Diversità</span>
+            <div class="pie animate no-round hover-text" id="circle-nachhaltig" style="--c:rgb(0, 17, 255); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="nachhaltig-prozent"></div>
+                <span class="tooltip-text" id="bottom">Nachhaltig</span>
             </div>
             
             <div class="pie animate no-round hover-text" id="circle-inklusion" style="--c:rgb(0, 255, 234); --secondary-color: rgb(113, 112, 114);">
                 <div class="prozent" id="inklusion-prozent"></div>
-                <span class="tooltip-text" id="bottom">Inklusion/<br>Inclusione</span>
+                <span class="tooltip-text" id="bottom">Inklusiv</span>
             </div>
             
-        </div>        
+        </div>
+        <div id="sprachanalyse">
+            <div>
+                <h2>Analyse der Mustersprache des Commoning</h2>
+            </div>
+        </div>
+        <div class="center" id="center">
+            <div class="pie animate no-round hover-text" id="circle-sozialesmiteinander" style="--c:rgb(60, 255, 0); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="sozialesmiteinander-prozent"></div>
+                <span class="tooltip-text" id="bottom">Soziales Miteinander</span>
+            </div> 
+            <div class="pie animate no-round hover-text" id="circle-gleichrangigeselbstorganisation" style="--c:rgb(255, 0, 0); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="gleichrangigeselbstorganisation-prozent"></div>
+                <span class="tooltip-text" id="bottom">Gleichrangige Selbst Organisation</span>
+            </div>
+            <div class="pie animate no-round hover-text" id="circle-sorgendesselbstbestimmteswirtschaften" style="--c:rgb(255, 0, 0); --secondary-color: rgb(113, 112, 114);">
+                <div class="prozent" id="sorgendesselbstbestimmteswirtschaften-prozent"></div>
+                <span class="tooltip-text" id="bottom">Sorgendes Selbstbestimmtes Wirtschaften</span>
+            </div>
+        </div>                
     </div>
 </div>
 <div id="bg">
