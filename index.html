@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+ 
     <div id="loading-screen" style="display: none;">
         <div class="loader">
             <div class="inner one"></div>
@@ -27,7 +27,7 @@
             <div class="inner three"></div>
         </div>
     </div>
-    
+   
 <header>
     <div class="seitentitel"><p class="titel">Commoning Versteher</p></div>
     <div class="einführung">
@@ -37,21 +37,21 @@
 <div class="container">
     <div class="form-container">
         <p id="status" class="status"></p>
-        <div class="result-grid">     
+        <div class="result-grid">    
             <div class="send-wraper">
                 <div class="input-mic-wraper">
-                    <textarea name="text" class="input" placeholder="schreibe etwas..." id="user-text" ></textarea>
+                    <textarea name="text" class="input" placeholder="Ich bin dein Commoning Versteher ;) Du kannst hier deine Überlegungen zu Themen rund ums Commoning eingeben. Ich werde versuchen, das zu transkribieren und eine kurze Reflexion schreiben. Ich versuche auch zu bewerten, wie sehr der Text den Ideen des Commonings entspricht...." id="user-text" ></textarea>
                     <div class="micdrag">
                         <button id="mic-button" class="micbutton"><i class="fa-solid fa-microphone"></i></button>
                         <button id="open-popup" class="micbutton"><i class="fa-solid fa-file"></i></i></button>
                     </div>
                 </div>
-                <button id="sendbutton" class="glow-on-hover" type="button">Send</button>
+                <button id="sendbutton" class="glow-on-hover" type="button" title="Du bist ein Wissenschaftler, der sich im Bereich Commoning sehr gut auskennt und die Lehre von Silke Helfrich verkörpert, die sie in ihren Publikationen, u.a. Frei fair & Lebendig die macht der Commos publiziert hat. Analysiere die texte in diesem Geist und gebe sie in einer verständlichen Sprache zurück!">Send</button>
             </div>
             <div class="betweenresult"></div>
                 <div class="result-top">
                     <div>
-                        <h2>Reflexion deiner Gedanken</h2>  
+                        <h2>Reflexion deiner Gedanken  </h2>  
                     </div>
                     <div class="select">
                         <div class="selected">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="result-bottom">
-                    <p class="cardresult" id="reflection"></p>   
+                    <p class="cardresult" id="reflection"   title="Reflektiere den Inhalt, wie gut der Text die Werte des Commoning widerspiegelt. Welche Inhalte des Textes entsprechen besonders der Logik des Commoning, und welche widersprechen ihr besonders?"></p>  
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="center" id="center">
-            <div class="cardCommoning">
+            <div class="cardCommoning" title="Dieser Wert sollte die Verbundenheit der Menschen ausdrücken, wobei 0 sehr egoistisch ist und 100 sehr gemeinschaftssinnig ist.">
                 <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-gemeinschaft" style="--c:rgb(173, 216, 230); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="gemeinschaft-prozent"></div>
@@ -93,7 +93,8 @@
                     <p>Gemeinschaft</p>
                 </div>
             </div>
-            <div class="cardCommoning"><div class="circlewraper">
+            <div class="cardCommoning" title="Dieser Wert sollte die Vertrauenswürdigkeit des Textes ausdrücken, wobei 0 sehr mistrauisch ist und 100 sehr vertrauenswürdig ist.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-vertrauen" style="--c:rgb(178, 224, 164); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="vertrauen-prozent"></div>
                 </div></div>
@@ -101,7 +102,8 @@
                     <p>Vertrauen</p>
                 </div>
             </div>
-            <div class="cardCommoning"><div class="circlewraper">
+            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie einladend und offenherzig der Text für eine kollaboration ist, wobei 0 sehr abweisend ist und 100 sehr einladend ist.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-gegenseitig" style="--c:rgb(250, 214, 165); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="gegenseitig-prozent"></div>
                 </div></div>
@@ -109,7 +111,8 @@
                     <p>Gegenseitig</p>
                 </div>
             </div>
-            <div class="cardCommoning"><div class="circlewraper">
+            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie bewust man mit Ressourcen umgeht, wobei 0 sehr verschwenderisch und 100 sehr bewust und sparspam ist.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-nachhaltig" style="--c:rgb(230, 230, 250); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="nachhaltig-prozent"></div>
                 </div></div>
@@ -117,7 +120,8 @@
                     <p>Nachhaltig</p>
                 </div>
             </div>
-            <div class="cardCommoning"><div class="circlewraper">
+            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie Inklussiv der Text ist, wobei 0 bestimmte Menschen ausgrenzt und 100 alle einschliesst.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-inklusion" style="--c:rgb(255, 209, 220); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="inklusion-prozent"></div>      
                 </div></div>
@@ -130,9 +134,10 @@
                 <div>
                     <h2>Analyse der Mustersprache des Commoning</h2>
                 </div>
-            </div>       
+            </div>      
         <div class="center" id="mustersprache">
-            <div class="cardMustersprache"><div class="circlewraper">
+            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text Zusammenarbeit und Förderung von Beziehungen ausdrückt, wobei 0 asoziales Verhalten und 100 sehr soziales Verhalten ausdrückt">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-sozialesmiteinander" style="--c:rgb(152, 255, 152); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="sozialesmiteinander-prozent"></div>
                 </div></div>
@@ -140,15 +145,17 @@
                     <p>Soziales Miteinander</p>
                 </div>
             </div>
-            <div class="cardMustersprache"><div class="circlewraper">
+            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text das Aushandeln auf Augenhöhe fördert, wobei 0 sehr Rangordnungsorientiert ist und 100 die Begenung auf Augenhöhe fördert.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-gleichrangigeselbstorganisation" style="--c:rgb(255, 182, 193); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="gleichrangigeselbstorganisation-prozent"></div>
                 </div></div>
                 <div class="carddescribt">
                     <p>Gleichrangige selbst organisation</p>
                 </div>
-            </div>   
-            <div class="cardMustersprache"><div class="circlewraper">
+            </div>  
+            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text sorgendes und selbstbestimmtes Wirtschaften ausdrückt, wobei 0 sehr fremdbestimmtes profititorientiertes Wirtschaften ist und 100 selbstbestimmtes und bedürfnisorientiertes Wirtschaften ausdrückt.">
+                <div class="circlewraper">
                 <div class="pie animate no-round hover-text" id="circle-sorgendesselbstbestimmteswirtschaften" style="--c:rgb(255, 245, 186); --secondary-color: rgb(113, 112, 114);">
                     <div class="prozent" id="sorgendesselbstbestimmteswirtschaften-prozent"></div>
                 </div></div>
@@ -160,7 +167,7 @@
         <div id="calltoaction">
             <p>Gefällt dir diese Anwendung? Interessiert es dich mehr darüber zu erfahren?</p>
             <div>
-                <a href="https://www.bcommonslab.org" style="text-decoration: none">
+                <a href="https://www.bcommonslab.org/visions/commoningversteher" target="_blank" style="text-decoration: none">
                     <button class="calltoact">
                         Mehr Informationen hier
                         <span style="margin-left: 10px;">→</span>
@@ -187,7 +194,7 @@
     <canvas class="backgroundcanvas"></canvas>
     <canvas class="backgroundcanvas"></canvas>
 </div>
-
+ 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script/background.js"></script>
 <script src="script/send.js"></script>
@@ -200,3 +207,5 @@
 <script src="script/draganddrop.js"></script>
 </body>
 </html>
+ 
+ 
