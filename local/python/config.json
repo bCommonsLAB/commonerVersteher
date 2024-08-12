@@ -1,5 +1,0 @@
-{
- "myopenkey": "your-api-key",
-  "modelname": "gpt-3.5-turbo",
-  "jsonbuild": "Bitte analysiere den folgenden Text und gib mir NUR ein JSON (schreibe nichts anderes als was gefragt ist!) zurück mit folgenden Informationen und lasse kein Detail bei den Transkriptionen aus!: Transcript: Die Transkription auf Deutsch.Eindruck: Eine kurze Reflexion über Inhalt und Bedeutung des Texts.Höflichkeit: Eine Zahl zwischen 0% und 100%, wobei 100% große verbundenheit ausdrückt und 0% keine verbundenheit auusdrückt.Sympathisch: Eine Zahl zwischen 0% und 100%, wobei 100% sehr vertrauenswürdig scheint und 0% sehr unvertraut ist.Lobend: Eine Zahl zwischen 0% und 100%, wobei 100% einladend und offen und 0% sehr kalt und distanziert ist.Wortwahl: Eine Zahl zwischen 0% und 100%, wobei 100% bewussten Resourcenumgang ausdrückt und 0% sehr verschwenderisch ist.Inklusion: Eine Zahl zwischen 0% und 100%, wobei 100% viele meinungen einbaut ung 0% gar nicht inklusiv ist.Hier ist der transkribierte Text:"
-}
