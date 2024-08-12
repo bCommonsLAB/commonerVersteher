@@ -1,6 +1,6 @@
 config = {
     "myopenkey": "YOUR_OPENA_AI_API_KEY",
-    "modelname": "gpt-3.5-turbo",
+    "modelname": "gpt-4o",
     "jsonbuild": """
             Analysiere den folgenden Text auf Deutsch und gib die Ergebnisse im JSON-Format zurück:
             Ergebnisformat:
