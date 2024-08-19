@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("text", userText);
 
-    fetch("https://api.bcommonslab.org/commoner/analyze-text", {
+    fetch("http://localhost:5001/analyze-text", {
       method: "POST",
       body: formData,
     })
