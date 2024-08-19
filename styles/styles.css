@@ -87,7 +87,7 @@ header {
   padding: 15px 0;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100000000;
   height: 7vh;
 }
 
@@ -108,11 +108,29 @@ header {
   padding-right: 10px;
 }
 
+@keyframes expandHeight {
+  from {
+    height: 17px;
+    
+  }
+  to {
+    height: auto;
+  }
+}
+
+@keyframes collapseHeight {
+  from {
+    height: auto;
+  }
+  to {
+    height: 17px;
+  }
+}
 .einfuehrungstext {
   padding-left: 5px;
   padding-right: 5px;
   width: 300px;
-  height: 17px;
+  height: 17px; /* Start height */
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
@@ -120,15 +138,15 @@ header {
   font-weight: 100;
   border: 1px white dashed;
   border-radius: 10px;
-  transition:
-    height 0.7s,
-    background-color 0.7s;
   background-color: #7b559f;
+  transition: background-color 0.7s, height 0.7s ease; /* Smooth transition for height */
 }
 
+
 .einfuehrungstext.expanded {
-  height: auto;
+  height: 100px; /* The height value that fits the expanded content */
 }
+
 
 #audioplayer {
   background-color: #000;
@@ -249,7 +267,7 @@ h2 {
   padding: 10px 20px;
   border-radius: 7px;
   border: 1px solid rgb(61, 106, 255);
-  font-size: 50px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
@@ -740,6 +758,7 @@ body,
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  flex-direction: column;
 }
 .mustersprache {
   display: flex;
@@ -805,7 +824,12 @@ header {
   margin: -30px
 }
 
-
+.media-cicle-wraper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
 
 #audioplayer {
   background-color: #000;
@@ -1228,6 +1252,7 @@ h2 {
 
   .center{
     flex-direction: column;
+    height: fit-content;
   }
 }
 

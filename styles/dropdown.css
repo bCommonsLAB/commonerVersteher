@@ -14,7 +14,7 @@
   margin-bottom: 3px;
   border-radius: 5px;
   position: relative;
-  z-index: 100000;
+  z-index: 100;
   font-size: 15px;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
   transform: rotate(-90deg);
   width: 25px;
   fill: white;
-  z-index: 100000;
+  z-index: 100;
   transition: 300ms;
 }
 

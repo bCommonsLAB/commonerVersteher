@@ -1,20 +1,28 @@
 .cardCommoning  {
-    width: 10vh;
+    width: 10vw;
+    max-width: 155px;
+    min-width: 120px;
     height: fit-content;
     border-radius: 20px;
     background: #313131;
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
    }
 .cardMustersprache  {
     width: 10vh;
+    max-width: 155px;
+    min-width: 120px;
     height: 100%;
     border-radius: 20px;
     background: #313131;
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
    }
 .carddescribt p {
     
@@ -23,4 +31,11 @@
     font-style: normal;
     color: rgb(255, 255, 255);
     text-align: center;
+}
+.group-wraper{
+    margin-bottom: 40px;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    flex-direction: row;
 }

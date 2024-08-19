@@ -61,15 +61,15 @@
                           </svg>
                         </div>
                         <div class="options">
-                          <div title="option-1">
-                            <label class="option" for="all"><i class="fa-solid fa-volume-high" onclick="text2Speech('german-summary')"></i>    Vorlesen</label>
-                        </div>
-                        <div class="value" data-value="option-1">
-                            <label class="option" for="option-1"><i class="fa-solid fa-copy" onclick="copyText('german-summary')"></i>    Kopieren</label>
-                        </div>
-                        <div class="value" data-value="option-2">
-                            <label class="option" for="option-2"><i class="fa-solid fa-envelope" onclick="shareText('german-summary')"></i>    Senden</label>
+                        <div>
+                              <label class="option" for="all" onclick="text2Speech('reflection')"><i class="fa-solid fa-volume-high"></i>    Vorlesen</label>
                           </div>
+                          <div class="value">
+                              <label class="option"onclick="copyText('reflection')"><i class="fa-solid fa-copy"></i>    Kopieren</label>
+                          </div>
+                          <div class="value">
+                              <label class="option"  onclick="shareText('reflection')"><i class="fa-solid fa-envelope"></i>    Senden</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,87 +83,102 @@
                 <h2>Analyse der Commoning Werte</h2>
             </div>
         </div>
-        <div class="center" id="center">
-            <div class="cardCommoning" title="Dieser Wert sollte die Verbundenheit der Menschen ausdrücken, wobei 0 sehr egoistisch ist und 100 sehr gemeinschaftssinnig ist.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-gemeinschaft" style="--c:rgb(173, 216, 230); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="gemeinschaft-prozent"></div>
-                </div> </div>
-                <div class="carddescribt">
-                    <p>Gemeinschaft</p>
+    <div class="center" id="center">
+        <div class="group-wraper">
+            <div class="media-cicle-wraper">
+                <div class="cardCommoning" title="Dieser Wert sollte die Verbundenheit der Menschen ausdrücken, wobei 0 sehr egoistisch ist und 100 sehr gemeinschaftssinnig ist.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-gemeinschaft" style="--c:rgb(173, 216, 230); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="gemeinschaft-prozent"></div>
+                    </div> </div>
+                    <div class="carddescribt">
+                        <p>Gemeinschaft</p>
+                    </div>
+                </div>
+
+                <div class="cardCommoning" title="Dieser Wert sollte die Vertrauenswürdigkeit des Textes ausdrücken, wobei 0 sehr mistrauisch ist und 100 sehr vertrauenswürdig ist.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-vertrauen" style="--c:rgb(178, 224, 164); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="vertrauen-prozent"></div>
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Vertrauen</p>
+                    </div>
                 </div>
             </div>
-            <div class="cardCommoning" title="Dieser Wert sollte die Vertrauenswürdigkeit des Textes ausdrücken, wobei 0 sehr mistrauisch ist und 100 sehr vertrauenswürdig ist.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-vertrauen" style="--c:rgb(178, 224, 164); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="vertrauen-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Vertrauen</p>
+            <div class="media-cicle-wraper"> 
+                <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie einladend und offenherzig der Text für eine kollaboration ist, wobei 0 sehr abweisend ist und 100 sehr einladend ist.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-gegenseitig" style="--c:rgb(250, 214, 165); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="gegenseitig-prozent"></div>
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Gegenseitig</p>
+                    </div>
+                </div>
+                <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie bewust man mit Ressourcen umgeht, wobei 0 sehr verschwenderisch und 100 sehr bewust und sparspam ist.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-nachhaltig" style="--c:rgb(230, 230, 250); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="nachhaltig-prozent"></div>
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Nachhaltig</p>
+                    </div>
                 </div>
             </div>
-            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie einladend und offenherzig der Text für eine kollaboration ist, wobei 0 sehr abweisend ist und 100 sehr einladend ist.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-gegenseitig" style="--c:rgb(250, 214, 165); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="gegenseitig-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Gegenseitig</p>
-                </div>
-            </div>
-            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie bewust man mit Ressourcen umgeht, wobei 0 sehr verschwenderisch und 100 sehr bewust und sparspam ist.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-nachhaltig" style="--c:rgb(230, 230, 250); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="nachhaltig-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Nachhaltig</p>
-                </div>
-            </div>
-            <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie Inklussiv der Text ist, wobei 0 bestimmte Menschen ausgrenzt und 100 alle einschliesst.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-inklusion" style="--c:rgb(255, 209, 220); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="inklusion-prozent"></div>      
-                </div></div>
-                <div class="carddescribt">
-                    <p>Inklusion</p>
+            <div class="media-cicle-wraper">
+                <div class="cardCommoning" title="Dieser Wert sollte ausdrücken, wie Inklussiv der Text ist, wobei 0 bestimmte Menschen ausgrenzt und 100 alle einschliesst.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-inklusion" style="--c:rgb(255, 209, 220); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="inklusion-prozent"></div>      
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Inklusion</p>
+                    </div>
                 </div>
             </div>
         </div>
-            <div id="mustersprachanalyse">
-                <div>
-                    <h2>Analyse der Mustersprache des Commoning</h2>
-                </div>
-            </div>      
-        <div class="center" id="mustersprache">
-            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text Zusammenarbeit und Förderung von Beziehungen ausdrückt, wobei 0 asoziales Verhalten und 100 sehr soziales Verhalten ausdrückt">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-sozialesmiteinander" style="--c:rgb(152, 255, 152); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="sozialesmiteinander-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Soziales Miteinander</p>
-                </div>
+    <div id="mustersprachanalyse">
+        <div>
+            <h2>Analyse der Mustersprache des Commoning</h2>
+        </div>
+    </div> 
+        <div class="group-wraper">  
+            <div class="media-cicle-wraper">
+                <div id="mustersprache">
+                    <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text Zusammenarbeit und Förderung von Beziehungen ausdrückt, wobei 0 asoziales Verhalten und 100 sehr soziales Verhalten ausdrückt">
+                        <div class="circlewraper">
+                        <div class="pie animate no-round hover-text" id="circle-sozialesmiteinander" style="--c:rgb(152, 255, 152); --secondary-color: rgb(113, 112, 114);">
+                            <div class="prozent" id="sozialesmiteinander-prozent"></div>
+                        </div></div>
+                        <div class="carddescribt">
+                            <p>Soziales Miteinander</p>
+                        </div>
+                    </div>
+                </div>   
+                <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text das Aushandeln auf Augenhöhe fördert, wobei 0 sehr Rangordnungsorientiert ist und 100 die Begenung auf Augenhöhe fördert.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-gleichrangigeselbstorganisation" style="--c:rgb(255, 182, 193); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="gleichrangigeselbstorganisation-prozent"></div>
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Gleichrangige selbst organisation</p>
+                    </div>
+                </div>  
             </div>
-            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text das Aushandeln auf Augenhöhe fördert, wobei 0 sehr Rangordnungsorientiert ist und 100 die Begenung auf Augenhöhe fördert.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-gleichrangigeselbstorganisation" style="--c:rgb(255, 182, 193); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="gleichrangigeselbstorganisation-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Gleichrangige selbst organisation</p>
-                </div>
-            </div>  
-            <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text sorgendes und selbstbestimmtes Wirtschaften ausdrückt, wobei 0 sehr fremdbestimmtes profititorientiertes Wirtschaften ist und 100 selbstbestimmtes und bedürfnisorientiertes Wirtschaften ausdrückt.">
-                <div class="circlewraper">
-                <div class="pie animate no-round hover-text" id="circle-sorgendesselbstbestimmteswirtschaften" style="--c:rgb(255, 245, 186); --secondary-color: rgb(113, 112, 114);">
-                    <div class="prozent" id="sorgendesselbstbestimmteswirtschaften-prozent"></div>
-                </div></div>
-                <div class="carddescribt">
-                    <p>Sorgendes Selbstbe- stimmtes Wirtschaften</p>
-                </div>
-            </div>    
+            <div class="media-cicle-wraper">
+                <div class="cardMustersprache" title="Dieser Wert sollte ausdrücken, wie sehr der Text sorgendes und selbstbestimmtes Wirtschaften ausdrückt, wobei 0 sehr fremdbestimmtes profititorientiertes Wirtschaften ist und 100 selbstbestimmtes und bedürfnisorientiertes Wirtschaften ausdrückt.">
+                    <div class="circlewraper">
+                    <div class="pie animate no-round hover-text" id="circle-sorgendesselbstbestimmteswirtschaften" style="--c:rgb(255, 245, 186); --secondary-color: rgb(113, 112, 114);">
+                        <div class="prozent" id="sorgendesselbstbestimmteswirtschaften-prozent"></div>
+                    </div></div>
+                    <div class="carddescribt">
+                        <p>Sorgendes Selbstbe- stimmtes Wirtschaften</p>
+                    </div>
+                </div>    
+            </div>
         </div>  
+    </div>
         <div id="calltoaction">
             <p>Gefällt dir diese Anwendung? Interessiert es dich mehr darüber zu erfahren?</p>
             <div>

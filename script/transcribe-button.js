@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("audio", audioBlob);
 
-    fetch("http://localhost:5000/transcribe", {
+    fetch("https://api.bcommonslab.org/commoner/transcribe", {
       method: "POST",
       body: formData,
     })
