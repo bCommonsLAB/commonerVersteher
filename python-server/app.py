@@ -14,7 +14,7 @@ CORS(app)
 # API-Schlüssel für OpenAI festlegen
 api_key = config.config['myopenkey']
 
-@app.route('/commoner/transcribe', methods=['POST'])
+@app.route('/transcribe', methods=['POST'])
 def transcribe():
     if 'audio' not in request.files:
         app.logger.error('Keine Audiodatei gefunden')
@@ -56,7 +56,7 @@ def transcribe():
         if os.path.exists(audio_file_path):
             os.remove(audio_file_path)
 
-@app.route('/commoner/analyze-text', methods=['POST'])
+@app.route('/analyze-text', methods=['POST'])
 def analyze_text():
     user_text = request.form.get('text')
     if not user_text:
@@ -105,7 +105,7 @@ def analyze_text():
         app.logger.error(f'Fehler während der Verarbeitung: {e}')
         return jsonify({'error': 'Fehler während der Verarbeitung'}), 500
     
-@app.route('/commoner/tts', methods=['POST'])
+@app.route('/tts', methods=['POST'])
 def tts():
     data = request.json
     text = data.get('text')
