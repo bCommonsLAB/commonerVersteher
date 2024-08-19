@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("text", userText);
 
-    fetch("/analyze-text", {
+    fetch("http://localhost/analyze-text", {
       method: "POST",
       body: formData,
     })
