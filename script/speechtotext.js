@@ -1,7 +1,7 @@
 function text2Speech(elementId, section) {
   var text = document.getElementById(elementId).innerText;
 
-  fetch("https://api.bcommonslab.org/commoner/tts", {
+  fetch("http://localhost:5001/tts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
